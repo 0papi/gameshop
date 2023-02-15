@@ -1,7 +1,11 @@
-<div class="flex items-center gap-8 flex-col justify-center">
+<div class="flex items-center mb-4 gap-8 flex-col justify-center">
   <a [routerLink]="['/products', product.id]">
     <div className="w-[90%] hover:scale-105 transition-all duration-100">
-      <img [src]="product.image" [alt]="product.name" class="rounded-xl" />
+      <img
+        [src]="product.image"
+        [alt]="product.name"
+        class="rounded-xl bg-slate-300"
+      />
     </div>
     <div className="mt-2">
       <p className=" text-gray-700 text-lg h-16">{{ product.name }}</p>

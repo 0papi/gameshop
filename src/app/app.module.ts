@@ -12,12 +12,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeroComponent } from './components/home/hero/hero.component';
 import { ProductsComponent } from './components/home/products/products.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { AllProductsComponent } from './pages/all-products/all-products.component';
 
 // declare application routes here
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'products',
+    component: AllProductsComponent,
   },
 ];
 
@@ -31,6 +36,7 @@ const appRoutes: Routes = [
     HeroComponent,
     ProductsComponent,
     ProductCardComponent,
+    AllProductsComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductsService {
-  private apiUrl = 'https://gameshop.up.railway.app/api/products/';
+  // private apiUrl = 'https://gameshop.up.railway.app/api/products/';
+  private apiUrl = environment.product_api_url;
 
   constructor(private http: HttpClient) {}
 
