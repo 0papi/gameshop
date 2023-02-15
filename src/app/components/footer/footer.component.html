@@ -1,0 +1,31 @@
+<footer class="bg-primary-dark text-primary-white p-4 xl:py-6 border-blue-500">
+  <div class="xl:h-28 flex flex-col items-center gap-4 pt-4 justify-center">
+    <a href="/">
+      <h1 class="text-xl text-gray-700 xl:text-4xl font-bold cursor-pointer">
+        <span class="text-primary-white">Game</span>Shop
+      </h1>
+    </a>
+    <ul class="flex gap-8 text-xl xl:text-2xl">
+      <a href="{{ github_url }}" target="_blank">
+        <li class="text-primary-white cursor-pointer">
+          <!-- <AiFillGithub /> -->
+          <fa-icon [icon]="github"></fa-icon>
+          <!-- Github -->
+        </li>
+      </a>
+      <a href="{{ twitter_url }}" target="_blank">
+        <li class="text-primary-white cursor-pointer">
+          <fa-icon [icon]="twitter"></fa-icon>
+        </li>
+      </a>
+      <a href="{{ linkedin_url }}" target="_blank">
+        <li class="text-primary-white cursor-pointer">
+          <fa-icon [icon]="linkedIn"></fa-icon>
+        </li>
+      </a>
+    </ul>
+    <h1 class="text-center text-gray-500 font-semibold xl:text-lg">
+      Created by Evans 2023
+    </h1>
+  </div>
+</footer>

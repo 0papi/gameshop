@@ -1,0 +1,49 @@
+<nav class="fixed top-0 w-full bg-primary-white text-primary-dark border z-50">
+  <div class="m-2 flex items-center justify-between xl:mx-10 xl:my-4">
+    <!-- logo -->
+    <div>
+      <h1
+        class="text-xl text-primary-dark xl:text-3xl font-bold cursor-pointer"
+      >
+        Game<span>Shop</span>
+      </h1>
+    </div>
+
+    <!-- main links -->
+    <ul class="hidden md:flex items-center gap-8 font-semibold xl:text-lg">
+      <a href="/products">
+        <li
+          class="cursor-pointer transition-all duration-75 hover:border-b-2 border-blue-700"
+        >
+          All Products
+        </li>
+      </a>
+      <a href="/playstation">
+        <li
+          class="cursor-pointer transition-all duration-75 hover:border-b-2 border-blue-700"
+        >
+          PlayStation
+        </li>
+      </a>
+      <a href="xbox">
+        <li
+          class="cursor-pointer transition-all duration-75 hover:border-b-2 border-blue-700"
+        >
+          Xbox
+        </li>
+      </a>
+      <a href="pc_and_others">
+        <li
+          class="cursor-pointer transition-all duration-75 hover:border-b-2 border-blue-700"
+        >
+          PC and other accessories
+        </li>
+      </a>
+    </ul>
+
+    <div class="flex items-center space-x-4">
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <fa-icon [icon]="faShoppingCart"></fa-icon>
+    </div>
+  </div>
+</nav>
