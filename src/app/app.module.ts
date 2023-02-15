@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,6 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeroComponent } from './components/home/hero/hero.component';
+import { ProductsComponent } from './components/home/products/products.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 // declare application routes here
 const appRoutes: Routes = [
@@ -15,7 +19,6 @@ const appRoutes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {},
 ];
 
 @NgModule({
@@ -25,8 +28,16 @@ const appRoutes: Routes = [
     FooterComponent,
     CartComponent,
     HomeComponent,
+    HeroComponent,
+    ProductsComponent,
+    ProductCardComponent,
   ],
-  imports: [BrowserModule, FontAwesomeModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

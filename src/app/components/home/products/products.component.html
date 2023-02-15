@@ -1,0 +1,13 @@
+<div>
+  <div class="flex items-center flex-col space-y-2 mb-4 justify-center">
+    <h2 class="text-primary-dark text-3xl font-bold">{{ headerText }}</h2>
+    <p>{{ subText }}</p>
+  </div>
+
+  <div class="gap-y-8 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:gap-8">
+    <app-product-card
+      *ngFor="let product of data"
+      [product]="product"
+    ></app-product-card>
+  </div>
+</div>
