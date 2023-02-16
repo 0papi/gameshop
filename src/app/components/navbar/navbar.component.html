@@ -29,7 +29,13 @@
 
     <div class="flex items-center space-x-4">
       <fa-icon [icon]="faSearch"></fa-icon>
-      <fa-icon [icon]="faShoppingCart"></fa-icon>
+      <div class="relative cursor-pointer" [routerLink]="['/cart']">
+        <span
+          class="bg-[#d81159] h-[20px] w-[20px] text-primary-white shadow-md rounded-[50%] flex items-center justify-center absolute top-[-10px] right-[-10px]"
+          >0</span
+        >
+        <fa-icon [icon]="faShoppingCart" class="cursor-pointer"></fa-icon>
+      </div>
     </div>
   </div>
 </nav>

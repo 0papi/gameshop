@@ -29,6 +29,10 @@ const appRoutes: Routes = [
     path: 'products/:id',
     component: SingleProductComponent,
   },
+  {
+    path: 'cart',
+    component: CartComponent,
+  },
 ];
 
 @NgModule({

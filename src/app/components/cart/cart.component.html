@@ -1,1 +1,97 @@
-<p>cart works!</p>
+<div class="xl:mx-10 my-14">
+  <div
+    class="w-full mx-auto flex space-y-8 flex-col border h-full md:w-[65%] lg:w-[55%] xl:w-[38%] bg-white px-4 pb-4"
+  >
+    <div class="mt-4 w-full flex items-center justify-between">
+      <h3 class="font-bold text-xl flex items-center xl:text-2xl">
+        Shopping Cart
+      </h3>
+      <h4 class="text-primary-red">{{ cartItems.length }} items</h4>
+    </div>
+
+    <!-- show when cart is empty -->
+    <div
+      class="flex flex-col items-center justify-center mt-4 space-y-2"
+      *ngIf="cartItems.length === 0"
+    >
+      <fa-icon [icon]="shoppingCart" class="text-6xl"></fa-icon>
+      <h4 class="text-lg font-bold">Your cart is empty</h4>
+      <button
+        class="bg-primary-dark px-6 py-1 text-primary-white xl:text-lg"
+        [routerLink]="['/products']"
+      >
+        Add Items To Cart
+      </button>
+    </div>
+
+    <!-- show if there are items in cart -->
+    <div
+      class="flex flex-col gap-4 lg:gap-6 xl:gap-8 overflow-y-auto"
+      *ngIf="cartItems.length !== 0"
+    >
+      <div
+        *ngFor="let item of cartItems"
+        class="flex rounded-full items-center mx-2 lg:mx-4 border-b-2 cursor-pointer"
+      >
+        <div class="w-[25%] xl:w-[14%] mr-4">
+          <img
+            alt="cart-item-image"
+            [src]="item.image"
+            class="rounded-full xl:w-[80%] bg-slate-200"
+          />
+        </div>
+        <div
+          class="flex flex-1 xl:w-[75%] xl:flex-row xl:justify-between flex-col gap-4"
+        >
+          <div class="items-center justify-between xl:w-[70%] flex">
+            <h4
+              class="font-semibold w-2/4 h-12 scrollbar-hide overflow-scroll lg:h-auto lg:overflow-auto"
+            >
+              {{ item?.name }}
+            </h4>
+            <div>
+              <div class="flex items-center">
+                <button class="border px-4 py-1">-</button>
+                <p class="px-4">{{ item?.quantity }}</p>
+                <button class="border px-4 py-1">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="flex xl:gap-8 items-center mr-2 justify-between">
+            <h5 class="font-bold">${{ item?.price }}.00</h5>
+            <button class="text-blue-700" (click)="removeItem(item)">
+              <fa-icon [icon]="deleteItem" class="text-lg"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cart total -->
+    <div *ngIf="cartItems.length !== 0">
+      <p>
+        <span class="text-slate-500 font-bold">Subtotal</span>:
+        <span class="text-2xl xl:text-3xl font-semibold text-primary-red">
+          ${{ getTotal() }}.00
+        </span>
+      </p>
+    </div>
+
+    <!-- cart additional actions -->
+    <div
+      *ngIf="cartItems.length !== 0"
+      class="flex flex-col w-full justify-center items-center gap-4"
+    >
+      <button
+        class="mt-4 bg-primary-dark text-center text-white font-semibold py-3 w-[60%]"
+      >
+        Stripe Checkout
+      </button>
+      <button
+        class="bg-primary-dark text-center text-white font-semibold py-3 w-[60%]"
+      >
+        Paystack Checkout
+      </button>
+    </div>
+  </div>
+</div>

@@ -18,7 +18,7 @@ export class SingleProductComponent {
     category: '',
     in_stock: false,
     is_best_seller: false,
-    is_featured: true,
+    is_featured_product: true,
     product_type: '',
   };
 
