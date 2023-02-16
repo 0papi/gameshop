@@ -1,0 +1,47 @@
+<div class="xl:mx-10 my-14">
+  <div class="xl:flex justify-center py-16 xl:mt-8 md:h-screen bg-slate-100">
+    <div class="mx-4 xl:w-[1290px]">
+      <div class="grid gap-4 lg:gap-6 xl:gap-8 grid-cols-1 md:grid-cols-2">
+        <div>
+          <img
+            [src]="product.image"
+            [alt]="product.name"
+            class="rounded-xl xl:w-[80%] bg-slate-200"
+          />
+        </div>
+        <div class="space-y-2">
+          <h2 class="text-gray-700 text-lg xl:text-xl">
+            {{ product.name }}
+          </h2>
+          <p class="font-bold text-2xl xl:text-4xl">${{ product.price }}.00</p>
+          <div class="flex">
+            <!-- <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiOutlineStar /> -->
+          </div>
+          <p>{{ product.description }}</p>
+          <div class="flex items-center gap-2 py-2">
+            <h3 class="font-bold">Quantity:</h3>
+            <div class="flex items-center">
+              <button class="border px-4 py-1">-</button>
+              <p class="px-4">23</p>
+              <button class="border px-4 py-1">+</button>
+            </div>
+          </div>
+          <div class="flex gap-4 items-center">
+            <button
+              class="bg-primary-dark px-6 py-1 text-primary-white xl:text-lg"
+            >
+              Add to Cart
+            </button>
+            <button class="border px-6 py-1 text-primary-dark xl:text-lg">
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

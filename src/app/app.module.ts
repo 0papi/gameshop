@@ -13,6 +13,7 @@ import { HeroComponent } from './components/home/hero/hero.component';
 import { ProductsComponent } from './components/home/products/products.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { AllProductsComponent } from './pages/all-products/all-products.component';
+import { SingleProductComponent } from './pages/single-product/single-product.component';
 
 // declare application routes here
 const appRoutes: Routes = [
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
   {
     path: 'products',
     component: AllProductsComponent,
+  },
+  {
+    path: 'products/:id',
+    component: SingleProductComponent,
   },
 ];
 
@@ -37,6 +42,7 @@ const appRoutes: Routes = [
     ProductsComponent,
     ProductCardComponent,
     AllProductsComponent,
+    SingleProductComponent,
   ],
   imports: [
     BrowserModule,
