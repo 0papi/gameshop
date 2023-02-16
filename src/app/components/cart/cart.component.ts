@@ -5,6 +5,7 @@ import {
   faShoppingBasket,
   faShoppingCart,
   faDeleteLeft,
+  faChevronCircleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -16,6 +17,8 @@ export class CartComponent {
   shoppingCart = faShoppingCart;
   shoppingBasket = faShoppingBasket;
   deleteItem = faDeleteLeft;
+  arrowLeft = faChevronCircleLeft;
+
   cartItems: ICartItem[] = [];
 
   constructor(private cartService: CartServiceService) {}

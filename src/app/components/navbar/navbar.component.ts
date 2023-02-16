@@ -4,6 +4,7 @@ import {
   faSearch,
   faCartShopping,
 } from '@fortawesome/free-solid-svg-icons';
+import { CartServiceService } from 'src/app/services/cart-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,4 +14,9 @@ import {
 export class NavbarComponent {
   faSearch = faSearch;
   faShoppingCart = faCartShopping;
+  constructor(private cartService: CartServiceService) {}
+
+  getTotalCount() {
+    return this.cartService.getItemCount();
+  }
 }

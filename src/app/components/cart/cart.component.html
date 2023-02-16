@@ -6,7 +6,7 @@
       <h3 class="font-bold text-xl flex items-center xl:text-2xl">
         Shopping Cart
       </h3>
-      <h4 class="text-primary-red">{{ cartItems.length }} items</h4>
+      <h4 class="text-primary-red">{{ getItemCount() }} items</h4>
     </div>
 
     <!-- show when cart is empty -->
@@ -68,7 +68,18 @@
     </div>
 
     <!-- cart total -->
-    <div *ngIf="cartItems.length !== 0">
+    <div
+      *ngIf="cartItems.length !== 0"
+      class="flex items-center justify-between cursor-pointer"
+    >
+      <span
+        className="flex items-center font-semibold xl:text-lg"
+        [routerLink]="['/products']"
+      >
+        <!-- <AiOutlineLeft /> -->
+        <fa-icon [icon]="arrowLeft"></fa-icon>
+        Continue shopping
+      </span>
       <p>
         <span class="text-slate-500 font-bold">Subtotal</span>:
         <span class="text-2xl xl:text-3xl font-semibold text-primary-red">
@@ -80,15 +91,15 @@
     <!-- cart additional actions -->
     <div
       *ngIf="cartItems.length !== 0"
-      class="flex flex-col w-full justify-center items-center gap-4"
+      class="flex justify-center items-center flex-col gap-4 md:flex-row md:items-center md:gap-8"
     >
       <button
-        class="mt-4 bg-primary-dark text-center text-white font-semibold py-3 w-[60%]"
+        class="bg-primary-dark text-center text-white font-semibold py-3 px-3 rounded-md w-full md:w-auto"
       >
         Stripe Checkout
       </button>
       <button
-        class="bg-primary-dark text-center text-white font-semibold py-3 w-[60%]"
+        class="bg-primary-dark text-center text-white font-semibold py-3 px-3 rounded-md w-full md:w-auto"
       >
         Paystack Checkout
       </button>
